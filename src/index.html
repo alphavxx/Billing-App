@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Billing-App</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+  <body>
+    <div class="main-contanier">
+      <nav class="side-bar">
+        <div class="tab side-bar__list">
+          <li
+            class="tablinks side-bar__item"
+            onclick="openTab(event, 'mainScreen')"
+            id="defaultOpen"
+          >
+            <img src="./icons/home-run.png" class="side-bar__icon" />
+          </li>
+          <li
+            class="tablinks side-bar__item"
+            onclick="openTab(event, 'stockManagementWindow')"
+            id="stock-screen"
+          >
+            <img src="./icons/add.png" class="side-bar__icon" />
+          </li>
+          <li
+            class="tablinks side-bar__item"
+            onclick="openTab(event, 'history-tab')"
+            id="history-screen"
+          >
+            <img src="./icons/bar-chart.png" class="side-bar__icon" />
+          </li>
+
+          <li
+            class="tablinks side-bar__item"
+            onclick="openTab(event, 'setting-screen')"
+            id="setting-tab"
+          >
+            <img src="./icons/gear.png" class="side-bar__icon" />
+          </li>
+        </div>
+      </nav>
+
+      <!-- Tab content -->
+
+      <!-- //////////////////////////////Billng Tab///////////////////////////////////////////////////// -->
+
+      <div id="mainScreen" class="tabcontent">
+        <div class="contanier">
+          <div class="title__header" id="main-shop-name">Shop Name</div>
+          <div class="title__sub-header">
+            <span id="main-shop-address"> Shop address </span>
+            Email : <span id="main-shop-mailid">Shop Email </span> Mobile:
+            <span id="main-shop-number">Shop Number</span>
+          </div>
+          <div class="input-form">
+            <div class="data-field__top">
+              <div>
+                <input
+                  class="ui input input-field"
+                  id="costumerName"
+                  type="text"
+                  placeholder="Costumer Name"
+                  autofocus
+                />
+                <input
+                  class="input-field"
+                  id="costumerNumber"
+                  type="text"
+                  placeholder="Costumer No"
+                />
+              </div>
+              <div class="side-container">
+                <div class="date-continer">
+                  Date <span id="date-view">------</span> Time
+                  <span id="time-view">-------</span>
+                </div>
+              </div>
+            </div>
+            <div class="item-field">
+              <div>
+                <input
+                  class="input-field"
+                  id="itemName"
+                  type="text"
+                  placeholder="Item name"
+                  list="match-list-item-name"
+                  autofocus
+                />
+                <datalist
+                  class="auto-suggestion-container"
+                  id="match-list-item-name"
+                >
+                  <!-- <option><span>Shirt</span><span>Price: 700</span></option> -->
+                </datalist>
+                <input
+                  class="input-field"
+                  id="price"
+                  type="text"
+                  placeholder="Rate"
+                />
+                <input
+                  class="input-field"
+                  id="quantity"
+                  type="text"
+                  placeholder="quantity"
+                />
+                <input
+                  class="input-field"
+                  id="discount"
+                  type="text"
+                  placeholder="Discount"
+                />
+                <button class="input-button" id="addbtn">ADD</button>
+              </div>
+            </div>
+            <div class="ui warning message" id="bill-stock-error">
+              <div class="header">Alert</div>
+              There is no such stock in that price
+            </div>
+          </div>
+
+          <!-- table -->
+          <div id="table-bill-container" class="table-container">
+            <div class="bill-table-title">
+              <div>ITME NAME</div>
+              <div>RATE</div>
+              <div>QUANTITY</div>
+              <div>DISCOUNT</div>
+              <div>TOTAL</div>
+            </div>
+            <!-- <div id="table-bill-container"> -->
+            <div class="bill-item-list"></div>
+          </div>
+          <div class="bill-footer">
+            <div class="bill-total-text">
+              Total quantity: <span id="total-quantity">0</span>
+            </div>
+            <div class="bill-total-text">
+              Total Amount: <span id="total-amount">0</span>
+            </div>
+            <div>
+              <form>
+                <button id="printBtn" type="submit" class="input-button">
+                  Print
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- //////////////////////////////Stock update Tab///////////////////////////////////////////////////// -->
+
+      <div id="stockManagementWindow" class="tabcontent">
+        <!-- Stock management Screen -->
+        <!-- Password Screen -->
+        <div id="AdminAuthoScreen" class="admin-autho-container">
+          <div class="autho-acces-box">
+            <div>
+              <h1>Enter The Password</h1>
+              <h4>To access this window</h4>
+            </div>
+            <div class="ui negative message" id="wronging-password">
+              <div class="header">wrong password</div>
+              <p>please enter the correct password</p>
+            </div>
+            <div>
+              <input
+                type="password"
+                name="adminAutho"
+                id="adminAuthoInput"
+                placeholder="Password"
+                class="ui input input-field"
+              />
+              <button class="input-button" id="adminAuthoBtn">Enter</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="stock-screen-body" id="stockScreenContainer">
+          <div class="stock-list">
+            <!-- Name List -->
+            <div class="stock-list-container">
+              <!-- price list -->
+              <div class="list-header list-header-n">Name</div>
+              <div id="stock-name-list">
+                <!-- <div class="list-item">Shirt</div> -->
+              </div>
+            </div>
+            <!-- for stock list -->
+            <div class="stock-list-container">
+              <!-- price list -->
+              <div class="list-header list-header-p">Price</div>
+              <div id="stock-price-list">
+                <!-- <div class="list-item">450</div> -->
+              </div>
+            </div>
+            <div class="stock-list-container">
+              <!-- quantity list -->
+              <div class="list-header list-header-q">Quantity</div>
+              <div id="stock-quantity-list"></div>
+              <!-- <div class="list-item">50</div> -->
+            </div>
+          </div>
+          <div class="stock-add">
+            <!-- for add stock -->
+            <div class="stock-header">ADD STOCK</div>
+            <div>
+              <div class="ui warning message" id="stock-error">
+                <div class="header">Enter the valid input</div>
+                Try to enter numeric value in stock price and quantity
+              </div>
+              <label class="stock-input-lable" for="stock-name-input"
+                >Name</label
+              >
+              <input
+                class="stock-input-text"
+                type="text"
+                id="stock-name-input"
+              />
+            </div>
+
+            <div>
+              <label class="stock-input-lable" for="stock-price">Price</label>
+              <input
+                class="stock-input-text"
+                type="text"
+                id="stock-price-input"
+              />
+            </div>
+            <div>
+              <label class="stock-input-lable" for="stock-quantity"
+                >Quantity</label
+              >
+              <input
+                class="stock-input-text"
+                type="text"
+                id="stock-quantity-input"
+              />
+            </div>
+            <button
+              type="submit"
+              class="input-button stock-add-btn"
+              id="stock-add-btn"
+            >
+              ADD
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- //////////////////////////////History Tab///////////////////////////////////////////////////// -->
+      <div id="history-tab" class="tabcontent">
+        <!-- Password Screen -->
+        <div id="AdminAuthoScreen-HS" class="admin-autho-container">
+          <div class="autho-acces-box">
+            <div>
+              <h1>Enter The Password</h1>
+              <h4>To access this window</h4>
+            </div>
+            <div class="ui negative message" id="wronging-password-HS">
+              <div class="header">wrong password</div>
+              <p>please enter the correct password</p>
+            </div>
+            <div>
+              <input
+                type="password"
+                name="adminAutho"
+                id="adminAuthoInput-HS"
+                placeholder="Password"
+                class="ui input input-field"
+              />
+              <button class="input-button" id="adminAuthoBtn-HS">Enter</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main content -->
+
+        <div class="history-container" id="historyContainer">
+          <div class="history-sort-container">
+            <!-- search view -->
+            <select
+              class="ui search dropdown history-dropdown"
+              id="priceSortDropDown"
+            >
+              <option value="none" selected>All</option>
+            </select>
+            <div class="input-box">
+              <input
+                type="date"
+                class="input-field"
+                placeholder="Start"
+                id="input-date-start"
+              />
+            </div>
+            <div class="input-box">
+              <input
+                type="date"
+                class="input-field"
+                placeholder="Till"
+                id="input-date-end"
+              />
+            </div>
+            <div>
+              <button class="input-button" id="sortButton">Sort</button>
+            </div>
+          </div>
+          <div class="history-total-container"></div>
+
+          <div class="">
+            <!-- list view -->
+            <div class="history-table-container">
+              <div class="history-table-header">
+                <div class="history-table-list-item">Date</div>
+                <div class="">Item Name</div>
+                <div class="">Price</div>
+                <div class="">Discount</div>
+                <div class="">Quantity</div>
+                <div class="">Total</div>
+              </div>
+              <div
+                class="history-table-list-container"
+                id="historyListContainer"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ////////////////////////////////////SETTINGS SCREEN//////////////////////////////////////////// -->
+      <div id="setting-screen" class="tabcontent">
+        <div class="setting-screen-container">
+          <h1 class="settings-h1">Settings</h1>
+          <div>
+            <div class="setting-main-box">
+              <div>
+                <h3>Shop Info</h3>
+                <div class="input-box">
+                  <label for="shopNameInput">Shop Name</label>
+                  <input
+                    class="input-field set-input"
+                    type="text"
+                    id="shopNameInput"
+                  />
+                </div>
+                <div class="input-box">
+                  <label for="shopAddressInput">Shop Address</label>
+                  <input
+                    class="input-field set-input"
+                    type="text"
+                    id="shopAddressInput"
+                  />
+                </div>
+                <div class="input-box">
+                  <label for="shopAddressInput">Shop Email</label>
+                  <input
+                    class="input-field set-input"
+                    type="text"
+                    id="shopEmailInput"
+                  />
+                </div>
+                <div class="input-box">
+                  <label for="shopAddressInput">Shop Contact number</label>
+                  <input
+                    class="input-field set-input"
+                    type="text"
+                    id="shopNumberInput"
+                  />
+                </div>
+                <button class="input-button set-button" id="setting-btn-save">
+                  Save
+                </button>
+              </div>
+
+              <div>
+                <h3>Changes Password</h3>
+                <div class="input-box">
+                  <label for="oldPasswordInput">Old Password</label>
+                  <input
+                    class="input-field set-input"
+                    type="text"
+                    id="oldPasswordInput"
+                  />
+                </div>
+                <div class="input-box">
+                  <label for="newPassInput">New Password</label>
+                  <input
+                    class="input-field set-input"
+                    type="text"
+                    id="newPassInput"
+                  />
+                </div>
+                <button
+                  class="input-button set-button"
+                  id="settings-change-btn"
+                >
+                  Change
+                </button>
+              </div>
+
+              <div>
+                <h3>Export Data</h3>
+                <button
+                  class="input-button set-button"
+                  id="settings-export-btn"
+                >
+                  Select
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    //Screen open default
+    document.getElementById("defaultOpen").click();
+    // change tab
+    function openTab(evt, cityName) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+
+      document.getElementById("AdminAuthoScreen-HS").style.display = "flex";
+      document.getElementById("AdminAuthoScreen").style.display = "flex";
+      document.getElementById("historyContainer").style.display = "none";
+      document.getElementById("stockScreenContainer").style.display = "none";
+    }
+
+    require("./app.js");
+  </script>
+</html>

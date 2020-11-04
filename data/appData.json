@@ -1,0 +1,9 @@
+{
+    "shop_data": {
+        "shopName": "SHOP NAME",
+        "shopAddress": "SHOP ADDRESS",
+        "shopEmail": "SHOP EMAIL ADDRESS",
+        "shopContactNo": "SHOP NUMBER"
+    },
+    "appPassword": "0000"
+}
