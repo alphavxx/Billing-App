@@ -1,3 +1,3 @@
-# Electron-billing
+# Electron-Billing
 PLS UPDATE THIS BY YOURSELF
 
