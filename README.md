@@ -14,7 +14,5 @@
 
 # SETTINGS SCREEN
 
-![image](https://user-images.githubusercontent.com/64111093/123597497-097a8480-d811-11eb-9d2b-57bf64196537.png)
+<img src="https://user-images.githubusercontent.com/64111093/123597497-097a8480-d811-11eb-9d2b-57bf64196537.png" alt="drawing" width="200"/>
 
-
-img[alt=image] { width: 200px; }
