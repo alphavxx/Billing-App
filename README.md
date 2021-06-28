@@ -2,7 +2,7 @@
 
 # HOME SCREEN
 
-![image](https://user-images.githubusercontent.com/64111093/123597129-9113c380-d810-11eb-8fed-694f2b042560.png =100x20)
+![image](https://user-images.githubusercontent.com/64111093/123597129-9113c380-d810-11eb-8fed-694f2b042560.png )
 
 # STOCK SCREEN
 
@@ -16,3 +16,5 @@
 
 ![image](https://user-images.githubusercontent.com/64111093/123597497-097a8480-d811-11eb-9d2b-57bf64196537.png)
 
+
+img[alt=image] { width: 200px; }
