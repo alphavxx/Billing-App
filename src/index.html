@@ -6,8 +6,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
     <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
@@ -17,30 +16,26 @@
           <li
             class="tablinks side-bar__item"
             onclick="openTab(event, 'mainScreen')"
-            id="defaultOpen"
-          >
+            id="defaultOpen">
             <img src="./icons/home-run.png" class="side-bar__icon" />
           </li>
           <li
             class="tablinks side-bar__item"
             onclick="openTab(event, 'stockManagementWindow')"
-            id="stock-screen"
-          >
+            id="stock-screen">
             <img src="./icons/add.png" class="side-bar__icon" />
           </li>
           <li
             class="tablinks side-bar__item"
             onclick="openTab(event, 'history-tab')"
-            id="history-screen"
-          >
+            id="history-screen">
             <img src="./icons/bar-chart.png" class="side-bar__icon" />
           </li>
 
           <li
             class="tablinks side-bar__item"
             onclick="openTab(event, 'setting-screen')"
-            id="setting-tab"
-          >
+            id="setting-tab">
             <img src="./icons/gear.png" class="side-bar__icon" />
           </li>
         </div>
@@ -66,14 +61,12 @@
                   id="costumerName"
                   type="text"
                   placeholder="Costumer Name"
-                  autofocus
-                />
+                  autofocus />
                 <input
                   class="input-field"
                   id="costumerNumber"
                   type="text"
-                  placeholder="Costumer No"
-                />
+                  placeholder="Costumer No" />
               </div>
               <div class="side-container">
                 <div class="date-continer">
@@ -90,32 +83,27 @@
                   type="text"
                   placeholder="Item name"
                   list="match-list-item-name"
-                  autofocus
-                />
+                  autofocus />
                 <datalist
                   class="auto-suggestion-container"
-                  id="match-list-item-name"
-                >
+                  id="match-list-item-name">
                   <!-- <option><span>Shirt</span><span>Price: 700</span></option> -->
                 </datalist>
                 <input
                   class="input-field"
                   id="price"
                   type="text"
-                  placeholder="Rate"
-                />
+                  placeholder="Rate" />
                 <input
                   class="input-field"
                   id="quantity"
                   type="text"
-                  placeholder="quantity"
-                />
+                  placeholder="quantity" />
                 <input
                   class="input-field"
                   id="discount"
                   type="text"
-                  placeholder="Discount"
-                />
+                  placeholder="Discount" />
                 <button class="input-button" id="addbtn">ADD</button>
               </div>
             </div>
@@ -176,8 +164,7 @@
                 name="adminAutho"
                 id="adminAuthoInput"
                 placeholder="Password"
-                class="ui input input-field"
-              />
+                class="ui input input-field" />
               <button class="input-button" id="adminAuthoBtn">Enter</button>
             </div>
           </div>
@@ -223,8 +210,7 @@
               <input
                 class="stock-input-text"
                 type="text"
-                id="stock-name-input"
-              />
+                id="stock-name-input" />
             </div>
 
             <div>
@@ -232,8 +218,7 @@
               <input
                 class="stock-input-text"
                 type="text"
-                id="stock-price-input"
-              />
+                id="stock-price-input" />
             </div>
             <div>
               <label class="stock-input-lable" for="stock-quantity"
@@ -242,14 +227,12 @@
               <input
                 class="stock-input-text"
                 type="text"
-                id="stock-quantity-input"
-              />
+                id="stock-quantity-input" />
             </div>
             <button
               type="submit"
               class="input-button stock-add-btn"
-              id="stock-add-btn"
-            >
+              id="stock-add-btn">
               ADD
             </button>
           </div>
@@ -275,8 +258,7 @@
                 name="adminAutho"
                 id="adminAuthoInput-HS"
                 placeholder="Password"
-                class="ui input input-field"
-              />
+                class="ui input input-field" />
               <button class="input-button" id="adminAuthoBtn-HS">Enter</button>
             </div>
           </div>
@@ -289,8 +271,7 @@
             <!-- search view -->
             <select
               class="ui search dropdown history-dropdown"
-              id="priceSortDropDown"
-            >
+              id="priceSortDropDown">
               <option value="none" selected>All</option>
             </select>
             <div class="input-box">
@@ -298,16 +279,14 @@
                 type="date"
                 class="input-field"
                 placeholder="Start"
-                id="input-date-start"
-              />
+                id="input-date-start" />
             </div>
             <div class="input-box">
               <input
                 type="date"
                 class="input-field"
                 placeholder="Till"
-                id="input-date-end"
-              />
+                id="input-date-end" />
             </div>
             <div>
               <button class="input-button" id="sortButton">Sort</button>
@@ -328,8 +307,7 @@
               </div>
               <div
                 class="history-table-list-container"
-                id="historyListContainer"
-              ></div>
+                id="historyListContainer"></div>
             </div>
           </div>
         </div>
@@ -348,32 +326,35 @@
                   <input
                     class="input-field set-input"
                     type="text"
-                    id="shopNameInput"
-                  />
+                    id="shopNameInput" />
                 </div>
                 <div class="input-box">
                   <label for="shopAddressInput">Shop Address</label>
                   <input
                     class="input-field set-input"
                     type="text"
-                    id="shopAddressInput"
-                  />
+                    id="shopAddressInput" />
                 </div>
                 <div class="input-box">
                   <label for="shopAddressInput">Shop Email</label>
                   <input
                     class="input-field set-input"
                     type="text"
-                    id="shopEmailInput"
-                  />
+                    id="shopEmailInput" />
                 </div>
                 <div class="input-box">
                   <label for="shopAddressInput">Shop Contact number</label>
                   <input
                     class="input-field set-input"
                     type="text"
-                    id="shopNumberInput"
-                  />
+                    id="shopNumberInput" />
+                </div>
+                <div class="input-box">
+                  <label for="shopAddressInput">Shop GST number</label>
+                  <input
+                    class="input-field set-input"
+                    type="text"
+                    id="shopGSTNumberInput" />
                 </div>
                 <button class="input-button set-button" id="setting-btn-save">
                   Save
@@ -387,21 +368,18 @@
                   <input
                     class="input-field set-input"
                     type="text"
-                    id="oldPasswordInput"
-                  />
+                    id="oldPasswordInput" />
                 </div>
                 <div class="input-box">
                   <label for="newPassInput">New Password</label>
                   <input
                     class="input-field set-input"
                     type="text"
-                    id="newPassInput"
-                  />
+                    id="newPassInput" />
                 </div>
                 <button
                   class="input-button set-button"
-                  id="settings-change-btn"
-                >
+                  id="settings-change-btn">
                   Change
                 </button>
               </div>
@@ -410,8 +388,7 @@
                 <h3>Export Data</h3>
                 <button
                   class="input-button set-button"
-                  id="settings-export-btn"
-                >
+                  id="settings-export-btn">
                   Select
                 </button>
               </div>

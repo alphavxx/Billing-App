@@ -59,6 +59,7 @@ const elements = {
   shopAddressInput: document.getElementById("shopAddressInput"),
   shopEmailInput: document.getElementById("shopEmailInput"),
   shopNumberInput: document.getElementById("shopNumberInput"),
+  shopGSTNumberInput: document.getElementById("shopGSTNumberInput"),
   settingsSaveBtn: document.getElementById("setting-btn-save"),
   settingsExportBtn: document.getElementById("settings-export-btn"),
 

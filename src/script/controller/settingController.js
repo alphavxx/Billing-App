@@ -14,6 +14,7 @@ const settingShopDetail = () => {
   const shopAddress = elements.shopAddressInput.value;
   const shopEmail = elements.shopEmailInput.value;
   const shopContactNo = elements.shopNumberInput.value;
+  const shopGSTNumber = elements.shopGSTNumberInput.value;
 
   if (shopName && shopEmail && shopAddress && shopContactNo) {
     dataObject.shop_data = {};
@@ -22,6 +23,7 @@ const settingShopDetail = () => {
     dataObject.shop_data.shopAddress = shopAddress;
     dataObject.shop_data.shopEmail = shopEmail;
     dataObject.shop_data.shopContactNo = shopContactNo;
+    dataObject.shop_data.shopGSTNumber = shopGSTNumber;
 
     dataObject.appPassword = appData.appPassword;
     fs.writeFileSync(filePath, JSON.stringify(dataObject));
@@ -54,6 +56,7 @@ const setDefault = () => {
   elements.shopAddressInput.value = appData.shop_data.shopAddress;
   elements.shopEmailInput.value = appData.shop_data.shopEmail;
   elements.shopNumberInput.value = appData.shop_data.shopContactNo;
+  elements.shopGSTNumberInput.value = appData.shop_data.shopGSTNumber;
 };
 
 module.exports = {

@@ -1,9 +1,1 @@
-{
-    "shop_data": {
-        "shopName": "SHOP NAME",
-        "shopAddress": "SHOP ADDRESS",
-        "shopEmail": "SHOP EMAIL ADDRESS",
-        "shopContactNo": "SHOP NUMBER"
-    },
-    "appPassword": "0000"
-}
+{"shop_data":{"shopName":"SHOP NAME","shopAddress":"SHOP ADDRESS","shopEmail":"SHOP EMAIL ADDRESS","shopContactNo":"SHOP NUMBER","shopGSTNumber":"YOUR_GST_NUMBER"},"appPassword":"0000"}
